@@ -341,7 +341,7 @@ function page() {
                     <Link href={"../shipping"}>Shipping</Link>
                     <Link href={"../cancellation"}>Cancellation</Link>
                   </div> */}
-                  <div className="flex absolute bottom-3 w-[100%] flex-wrap justify-end items-center dark:text-white text-[#414141] gap-4 text-[12px] select-none">
+                  <div className="flex absolute bottom-[50px] w-[100%] flex-wrap justify-end items-center dark:text-white text-[#414141] gap-4 text-[12px] select-none">
                     <div className="flex sm:bottom-3 w-[50%] pn:max-sm:w-full p-2 flex-wrap  justify-center items-center  dark:text-white text-[#414141] gap-3 text-[12px] select-none">
                       <Link className="text-[#414141] font-semibold text-[10px]" href={"../terms"}>T&C</Link>
                       <Link className="text-[#414141] font-semibold text-[10px]" href={"../privacy"}>Privacy</Link>
