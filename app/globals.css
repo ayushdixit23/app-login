@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.opt-container input {
+  @apply !mr-0 m-3 rounded-[12px] h-14 min-h-[40px] min-w-[40px] py-4 px-2 dark:border-[#3d4654] bg-slate-100 outline-none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
