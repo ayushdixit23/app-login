@@ -71,25 +71,12 @@ function page() {
 		await axios
 			.post(`${API}/addNumber/${id}`, { phone: "91" + number })
 			.then(function (res) {
-				if (res.data.success === true) {
-					if (res.data.userexists) {
-						if (window.ReactNativeWebView) {
-							let a = JSON.stringify(res?.data);
-							window.ReactNativeWebView.postMessage(a);
-						}
-						toast.success("Success");
-					} else {
-						if (window.ReactNativeWebView) {
-							let data = {
-								number: number,
-								userexists: false,
-								success: true,
-							};
-							let a = JSON.stringify(data);
-							window.ReactNativeWebView.postMessage(a);
-						}
-						toast.error("Seems like you don't have an account in the app.");
+				if (res.data.success) {
+					if (window.ReactNativeWebView) {
+						let a = JSON.stringify(res?.data);
+						window.ReactNativeWebView.postMessage(a);
 					}
+					toast.success("Success");
 				} else {
 					toast.error("Something went wrong...");
 					setAnim(false);
