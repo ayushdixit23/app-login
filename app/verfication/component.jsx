@@ -10,6 +10,7 @@ import { CgSpinner } from "react-icons/cg";
 import Lotties from "@/app/Lotties";
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
+import Loading from "@/Loading";
 const DynamicOtpInput = dynamic(() => import("otp-input-react"), {
 	ssr: false,
 });
@@ -24,6 +25,7 @@ function page() {
 	const [showOTP, setShowOTP] = useState(false);
 	const [seconds, setSeconds] = useState(30);
 	const [isActive, setIsActive] = useState(true);
+	const [lo, setLo] = useState(true)
 	const [come, setCome] = useState(0);
 	const [change, setChange] = useState(1);
 	const [load, setLoad] = useState(false);
@@ -143,6 +145,15 @@ function page() {
 				setAnim(false);
 				setLoading(false);
 			});
+	}
+
+
+	useEffect(() => {
+		setLo(false)
+	}, [])
+
+	if (lo) {
+		return <Loading />
 	}
 
 	return (
